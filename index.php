@@ -4,11 +4,9 @@
     include 'config/config.php';
 
 // if Logged in redirect to dashboard
-if (isset($_SESSION['name'])) {
     if(isset($_SESSION['admin'])){
         header('location:view/dashboard/dashboard.php');
-    } 
-    exit();
+        exit();
 }
 
 ?>
