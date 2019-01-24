@@ -20,7 +20,7 @@
     $GLOBALS['HOST']     = 'localhost';
     $GLOBALS['USERNAME'] = 'root';
     $GLOBALS['PASSWORD'] = 'root';
-    $GLOBALS['DATABASE'] = 'direct_livestock';
+    $GLOBALS['DATABASE'] = 'hyzd';
 
 
     /*
