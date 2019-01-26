@@ -153,13 +153,13 @@
 
     function editIndustry(id) {
         deleteCookie();
-        document.cookie = "document_id" + id;
+        document.cookie = "industry_id = " + id;
         window.location.href = "edit_industry.php";
     }
 
     function viewIndustry(id) {
         deleteCookie();
-        document.cookie = "document_id=" + id;
+        document.cookie = "industry_id=" + id;
         window.location.href            = "view_industry.php"
     }
 

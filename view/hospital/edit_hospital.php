@@ -95,7 +95,7 @@
                                 <label for="name">医院名称 : </label>        
                             </div>
                             <div class="col-sm-9">
-                                <input type="hidden" name="id" value="<?php echo $rowHospital['id'] ?>">
+                                <input type="hidden" name="id" value="<?php echo $rowHospital['id']; ?>">
                                 <input type="text" id="name" name="name" class="form-control input-sm" data-required="true"
                                     value='<?php echo $rowHospital["Hospital_Name"] ?>'>
                             </div>
@@ -348,8 +348,8 @@
                                 <label for="sort">排序 : </label>        
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" id="sort" name="sort" class="form-control input-sm"
-                                    data-required="true" value='<?php echo $rowHospital["Sort"] ?>'>
+                                <input type="number" id="sort" name="sort" class="form-control input-sm"
+                                    data-required="true" value='<?php echo $rowHospital["Sort"] ?>' min="1" max="100">
                             </div>
                         </div>
                     </div>

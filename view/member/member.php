@@ -156,7 +156,7 @@
 
     function editMember(id) {
         deleteCookie();
-        document.cookie = "member_id" + id;
+        document.cookie = "member_id = " + id;
         window.location.href = "edit_member.php";
     }
 

@@ -7,7 +7,7 @@
         header('location:../../index.php');
     }
 
-    $industryId = $_COOKIE['document_id'];
+    $industryId = $_COOKIE['industry_id'];
 
     $industryData = $db->prepare('SELECT * FROM industry WHERE id=?');
     $industryData->execute(array($industryId));

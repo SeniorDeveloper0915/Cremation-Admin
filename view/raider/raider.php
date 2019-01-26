@@ -157,7 +157,7 @@
 
     function editRaider(id) {
         deleteCookie();
-        document.cookie = "raider_id" + id;
+        document.cookie = "raider_id = " + id;
         window.location.href = "edit_raider.php";
     }
 

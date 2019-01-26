@@ -14,7 +14,7 @@
             $db = new PDO("mysql:dbname={$GLOBALS["DATABASE"]};host={$GLOBALS["HOST"]};charset=utf8mb4", $GLOBALS["USERNAME"], $GLOBALS["PASSWORD"], $options);
             $db->exec("set names utf8mb4");
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $db;
+    return $db;
         } catch (PDOException $ex) {
             var_dump($ex);
             die('Database connection failed. Please check the database configuration');

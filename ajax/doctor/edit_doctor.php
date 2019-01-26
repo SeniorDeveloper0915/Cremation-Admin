@@ -3,7 +3,7 @@
     include '../../config/config.php';
 
 // SESSION CHECK SET OR NOT
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['admin'])) {
     header('location:../../index.php');
 }
 
@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
     $input['length']                = post('length');
     $input['number']                = post('number');
     $input['nationid']              = post('nationid');
-    $input['profile']               = trim($_REQUEST['profile']);
+    $input['profile']               = $_REQUEST['profile'];
     $input['sort']                  = post('sort');
     $input['skill']                 = json_decode($_REQUEST['skill']);
 
@@ -51,7 +51,7 @@ if ($_POST) {
 
         foreach ($input['skill'] as $key) {
             # code...
-            $query      = 'INSERT INTO `service` SET Doctor_Id = ?, First_Project_Id = ?, Second_Project_Id = ?, Third_Project_Id = ?';
+            $query      = 'INSERT INTO `skill` SET Doctor_Id = ?, First_Project_Id = ?, Second_Project_Id = ?, Third_Project_Id = ?';
             $parameters = array($doctorId, $key[0], $key[1], $key[2]);
 
             $statement = $db->prepare($query);

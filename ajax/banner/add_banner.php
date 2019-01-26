@@ -3,8 +3,8 @@
     include '../../config/config.php';
 
 // SESSION CHECK SET OR NOT
-if (!isset($_SESSION['username'])) {
-    header('location:index.php');
+if (!isset($_SESSION['admin'])) {
+    header('location:../../index.php');
 }
 
     $output = [];
@@ -22,7 +22,6 @@ if ($_POST) {
             $parameters = array($input['bannertitle'], $input['url'], $input['sort']);
 
         } else {
-
             $allowedFileTypes = array('jpg', 'jpeg', 'png', 'gif', 'pjpeg');
             $imageName = generateNewFileName($_FILES['bannerimg']);
             $ext               = end((explode('.', $_FILES['bannerimg']['name'])));

@@ -128,6 +128,7 @@
                                             <label for="projectname">三级项目名称 : </label>        
                                         </div>
                                         <div class="col-sm-9">
+					    <input type="hidden" name="id" value="<?php echo $rowProject['id'] ?>">
                                             <input type="text" id="projectname" name="projectname" class="form-control input-sm" data-required="true"
                                                 value="<?php echo $rowProject['Project_Name'] ?>">        
                                         </div>
@@ -241,9 +242,16 @@
                                         <div class="col-sm-1">
                                             <label for="proposedprice">参考价格 : </label>        
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="number" id="proposedprice" name="proposedprice" class="form-control input-sm" data-required="true"
-                                                value="<?php echo $rowProject['Proposed_Price'] ?>" step="any">        
+                                        <div class="col-sm-4">
+                                            <input type="text" id="proposedfrom" name="proposedfrom" class="form-control input-sm" data-required="true"
+                                                value="<?php echo $rowProject['Proposed_From'] ?>" step="any">        
+                                        </div>
+					<div class="col-sm-1" style="text-align : center">
+						<span> ~ </span>
+					</div>
+					<div class="col-sm-4">
+                                            <input type="text" id="proposedto" name="proposedto" class="form-control input-sm" data-required="true"
+                                                value="<?php echo $rowProject['Proposed_To'] ?>" step="any">
                                         </div>
                                     </div>
                                 </div>

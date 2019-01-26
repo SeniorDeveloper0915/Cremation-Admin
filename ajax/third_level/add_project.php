@@ -17,7 +17,8 @@ if (!isset($_SESSION['username'])) {
     $input['description']       = post('description');
     $input['features']          = post('features');
     $input['efficiency']        = post('efficiency');
-    $input['proposedprice']     = post('proposedprice');
+    $input['proposedfrom']      = post('proposedfrom');
+    $input['proposedto']        = post('proposedto');
     $input['timeperiod']        = post('timeperiod');
     $input['aesthetic']         = post('aesthetic');
     $input['advantages']        = post('advantages');
@@ -33,10 +34,10 @@ if (!isset($_SESSION['username'])) {
 
 if ($_POST) {
     if ($_FILES['beforeimg']['name'] == '' && $_FILES['effectimg']['name'] == '') {
-        $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_Price = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
+        $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_From = ?, Proposed_To = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
 
 
-        $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $input['description'], $input['features'], $input['efficiency'], $input['proposedprice'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
+        $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $input['description'], $input['features'], $input['efficiency'], $input['proposedfrom'], $input['proposedto'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
 
         $statement = $db->prepare($query);
         $statement->execute($parameters);
@@ -65,10 +66,10 @@ if ($_POST) {
             // resize($path, '150px', '150px', $ext);
             
             // Insert into database
-            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Before_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_Price = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
+            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Before_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_From = ?, Proposed_To = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
 
 
-            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $imageName, $input['description'], $input['features'], $input['efficiency'], $input['proposedprice'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
+            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $imageName, $input['description'], $input['features'], $input['efficiency'], $input['proposedfrom'], $input['proposedto'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
 
         }
         $statement = $db->prepare($query);
@@ -98,10 +99,10 @@ if ($_POST) {
             // resize($path, '150px', '150px', $ext);
             
             // Insert into database
-            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Effect_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_Price = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
+            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Effect_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_From = ?, Proposed_To = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
 
 
-            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $imageName, $input['description'], $input['features'], $input['efficiency'], $input['proposedprice'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
+            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $imageName, $input['description'], $input['features'], $input['efficiency'], $input['proposedfrom'], $input['proposedto'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
 
         }
         $statement = $db->prepare($query);
@@ -138,10 +139,10 @@ if ($_POST) {
             // resize($path, '150px', '150px', $ext);
             
             // Insert into database
-            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Before_Img = ?, Effect_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_Price = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
+            $query      = 'INSERT INTO `project` SET First_Project_Id = ?, Second_Project_Id = ?, Project_Name = ?, Project_Alias = ?, Before_Img = ?, Effect_Img = ?, Description = ?, Features = ?, Efficiency = ?, Proposed_From = ?, Proposed_To = ?, Time_Period = ?, Aesthetic_standard = ?, Advantages = ?, Shortcoming = ?, Suitable = ?, Risk_Warning = ?, Pre_Precautions = ?, Care_Considerations = ?, Effects_Treatment = ?, Sort = ?';
 
 
-            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $beforeName, $effectName, $input['description'], $input['features'], $input['efficiency'], $input['proposedprice'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
+            $parameters = array($input['firstid'], $input['secondid'], $input['projectname'], $input['projectalias'], $beforeName, $effectName, $input['description'], $input['features'], $input['efficiency'], $input['proposedfrom'], $input['proposedto'], $input['timeperiod'], $input['aesthetic'], $input['advantages'], $input['shortcoming'], $input['suitable'], $input['warning'], $input['precautions'], $input['considerations'], $input['treatment'], $input['sort']);
             $statement = $db->prepare($query);
             $statement->execute($parameters);
         }

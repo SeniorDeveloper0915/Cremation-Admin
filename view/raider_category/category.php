@@ -156,7 +156,7 @@
 
     function editCategory(id) {
         deleteCookie();
-        document.cookie = "category_id" + id;
+        document.cookie = "category_id = " + id;
         window.location.href = "edit_category.php";
     }
 

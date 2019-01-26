@@ -6,7 +6,7 @@ session_start();
       $hospitalId = get('id');
 
 // Check session of admin.If session is not set die it.
-if(!isset($_SESSION['username']))
+if(!isset($_SESSION['admin']))
 {
     $output = responseError('Session is destroyed');
 

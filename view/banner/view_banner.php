@@ -12,6 +12,7 @@
     $bannerData->execute(array($bannerId));
     $rowBanner = $bannerData->fetch(PDO::FETCH_ASSOC);
     $bannerimg = file_exists("../../images/banner/".$rowBanner['Banner_Img']);
+	var_dump($bannerimg);
 ?>
 
 <!DOCTYPE html>

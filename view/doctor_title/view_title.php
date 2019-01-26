@@ -74,7 +74,7 @@
                                             <label for="sort">排序 : </label>        
                                         </div>
                                         <div class="col-sm-9">
-                                            <input type="text" id="sort" name="sort" class="form-control input-sm"
+                                            <input type="number" id="sort" name="sort" class="form-control input-sm"
                                                 data-required="true" value="<?php echo $rowTitle['Sort'] ?>" disabled>        
                                         </div>
                                     </div>

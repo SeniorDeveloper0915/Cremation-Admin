@@ -12,16 +12,15 @@
 /* Array of database columns which should be read and sent back to DataTables. Use a space where
  * you want to insert a non-database field (for example a counter or static image)
  */
-$aColumns = array( 'id','Member_Name', 'Sort', 'Status', 'Release_Time');
-$asColumns = array( 'id','Member_Name', 'Sort', 'Status', 'Release_Time');
-$aaColumns = array( 'id','Member_Name', 'Sort', 'Status', 'Release_Time');
+$aColumns = array( 'id','Member_Name', 'Status', 'Sort', 'Release_Time');
+$asColumns = array( 'id','Member_Name', 'Status', 'Sort', 'Release_Time');
+$aaColumns = array( 'id','Member_Name', 'Status', 'Sort', 'Release_Time');
 
 /* Indexed column (used for fast and accurate table cardinality) */
 $sIndexColumn = "id";
 
 /* DB table to use */
 $sTable = "core_team";
-
 /* Database connection information */
 
 require_once("../../config/config.php");
@@ -89,7 +88,6 @@ if ( isset( $_GET['iSortCol_0'] ) )
     }
 }
 
-
 /*
  * Filtering
  * NOTE this does not match the built-in DataTables filtering which does it
@@ -128,7 +126,6 @@ for ( $i=0 ; $i<count($asColumns) ; $i++ )
     }
 }
 
-
 /*
  * SQL queries
  * Get data to display SELECT * FROM users
@@ -141,7 +138,6 @@ $sQuery = "
         $sLimit
     ";
 $rResult = mysqli_query($gaSql['link'], $sQuery ) or fatal_error( 'MySQL Error: ' . mysql_errno() );
-
 /* Data set length after filtering */
 $sQuery = "
         SELECT FOUND_ROWS()
@@ -149,7 +145,6 @@ $sQuery = "
 $rResultFilterTotal = mysqli_query($gaSql['link'] , $sQuery) or fatal_error( 'MySQL Error: ' . mysql_errno() );
 $aResultFilterTotal = mysqli_fetch_array($rResultFilterTotal);
 $iFilteredTotal = $aResultFilterTotal[0];
-
 /* Total data set length */
 $sQuery = "
         SELECT COUNT(".$sIndexColumn.")
@@ -158,7 +153,6 @@ $sQuery = "
 $rResultTotal = mysqli_query($gaSql['link'] ,$sQuery) or fatal_error( 'MySQL Error: ' . mysql_errno() );
 $aResultTotal = mysqli_fetch_array($rResultTotal);
 $iTotal = $aResultTotal[0];
-
 
 /*
  * Output
@@ -169,7 +163,6 @@ $output = array(
     "iTotalDisplayRecords" => $iFilteredTotal,
     "aaData" => array()
 );
-
 while ( $aRow = mysqli_fetch_array( $rResult ) )
 {
     $row = array();

@@ -217,9 +217,16 @@
                                         <div class="col-sm-1">
                                             <label for="proposedprice">参考价格 : </label>        
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="number" id="proposedprice" name="proposedprice" class="form-control input-sm" data-required="true"
-                                                value="<?php echo $rowProject['Proposed_Price'] ?>" step="any" disabled="true">        
+                                        <div class="col-sm-4">
+                                            <input type="text" id="proposedfrom" name="proposedfrom" class="form-control input-sm" data-required="true"
+                                                value="<?php echo $rowProject['Proposed_From'] ?>" step="any" disabled="true">        
+                                        </div>
+					<div class="col-sm-1" style="text-align : center;">
+						<span> ~ </span>
+					</div>
+					<div class="col-sm-4">
+                                            <input type="text" id="proposeto" name="proposedto" class="form-control input-sm" data-required="true"
+                                                value="<?php echo $rowProject['Proposed_To'] ?>" step="any" disabled="true">
                                         </div>
                                     </div>
                                 </div>

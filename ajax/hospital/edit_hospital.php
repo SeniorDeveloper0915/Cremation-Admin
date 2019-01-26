@@ -3,7 +3,7 @@
     include '../../config/config.php';
 
 // SESSION CHECK SET OR NOT
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['admin'])) {
     header('location:../../index.php');
 }
 
@@ -46,7 +46,7 @@ if ($_POST) {
         $statement = $db->prepare($query);
         $statement->execute($parameters);
 
-        $query = "DELETE FROM services where Hospital_Id = ?";
+        $query = "DELETE FROM service where Hospital_Id = ?";
         $parameters = array($hospitalId);
         $statement = $db->prepare($query);
         $statement->execute($parameters);
@@ -67,7 +67,7 @@ if ($_POST) {
 
         foreach ($input['doctors'] as $key) {
             # code...
-            $query      = 'INSERT INTO `team` SET Hospital_Id = ?, Doctor_Id';
+            $query      = 'INSERT INTO `team` SET Hospital_Id = ?, Doctor_Id = ?';
             $parameters = array($hospitalId, $key);
 
             $statement = $db->prepare($query);
@@ -109,7 +109,7 @@ if ($_POST) {
             $statement = $db->prepare($query);
             $statement->execute($parameters);
 
-            $query = "DELETE FROM services where Hospital_Id = ?";
+            $query = "DELETE FROM service where Hospital_Id = ?";
             $parameters = array($hospitalId);
             $statement = $db->prepare($query);
             $statement->execute($parameters);

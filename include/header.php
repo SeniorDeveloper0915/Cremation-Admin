@@ -60,7 +60,7 @@
                             <li class="divider"> </li>
 
                             <li>
-                                <a href="../view/logout.php">
+                                <a href="/hy_admin/view/logout.php">
                                     <i class="icon-key"></i> Log Out </a>
                             </li>
                         </ul>

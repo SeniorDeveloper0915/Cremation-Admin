@@ -155,7 +155,7 @@
 
     function editCase(id) {
         deleteCookie();
-        document.cookie = "case_id" + id;
+	document.cookie = "case_id = " + id;
         window.location.href = "edit_case.php";
     }
 

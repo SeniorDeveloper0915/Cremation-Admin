@@ -215,9 +215,16 @@
                                         <div class="col-sm-1">
                                             <label for="proposedprice">参考价格 : </label>        
                                         </div>
-                                        <div class="col-sm-9">
-                                            <input type="number" id="proposedprice" name="proposedprice" class="form-control input-sm" data-required="true"
+                                        <div class="col-sm-4">
+                                            <input type="text" id="proposedfrom" name="proposedfrom" class="form-control input-sm" data-required="true"
                                                 value="" placeholder="请输入项目参考价格" step="any">        
+                                        </div>
+					<div class="col-sm-1" style="text-align : center;">
+						<span>~</span>
+					</div>
+					<div class="col-sm-4">
+                                            <input type="text" id="proposedto" name="proposedto" class="form-control input-sm" data-required="true"
+                                                value="" placeholder="请?~S?~E?项?~[??~O~B?~@~C价?| ?" step="any">
                                         </div>
                                     </div>
                                 </div>

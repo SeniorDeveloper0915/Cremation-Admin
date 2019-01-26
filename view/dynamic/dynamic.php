@@ -156,7 +156,7 @@
 
     function editDynamic(id) {
         deleteCookie();
-        document.cookie = "dynamic_id" + id;
+        document.cookie = "dynamic_id = " + id;
         window.location.href = "edit_dynamic.php";
     }
 

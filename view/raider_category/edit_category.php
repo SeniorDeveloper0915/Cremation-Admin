@@ -66,8 +66,8 @@
                                 <label for="sort">排序 : </label>        
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" id="sort" name="sort" class="form-control input-sm"
-                                    data-required="true" value="<?php echo $rowCategory['Sort'] ?>">        
+                                <input type="number" id="sort" name="sort" class="form-control input-sm"
+                                    data-required="true" value="<?php echo $rowCategory['Sort'] ?>" min = "1" max="100">        
                             </div>
                         </div>
                     </div>

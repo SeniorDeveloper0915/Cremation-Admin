@@ -61,8 +61,8 @@
                                 <label for="sort">排序 : </label>        
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" id="sort" name="sort" class="form-control input-sm"
-                                    data-required="true" value="" placeholder="请输入排序码 (注：数字越高，展示越靠前（最大值99))">        
+				<input type="number" id="sort" name="sort" class="form-control input-sm"
+                                    data-required="true" value="" placeholder="请输入排序码 (注：数字越高，展示越靠前（最大值99))" min="1" max="100">
                             </div>
                         </div>
                     </div>

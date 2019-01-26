@@ -205,7 +205,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-2">
-                                <select class="form-control" id="thirdid" name="thirdid" onchange="selThird(this.value);">
+                                <select class="form-control" id="thirdid" name="thirdid">
                                     <?php
                                         foreach ($thirdProjects as $value) {
                                     ?>
@@ -216,7 +216,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-2">
-                                <a href="javascript:;" onclick="addService();" class="btn btn-outline green btn-sm" id="addskill">+</a>&nbsp
+                                <a href="javascript:;" onclick="addSkill();" class="btn btn-outline green btn-sm" id="addskill">+</a>&nbsp
                             </div>
                         </div>
                         <div class="row" style="margin-top: 20px;">
@@ -268,7 +268,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn dark btn-outline" onclick="back();return false">返回</button>
-                    <button type="submit" class="btn green btn-outline" name="submit" onclick="createDoctor();return false">保存</button>
+                    <button type="button" class="btn green btn-outline" name="submit" onclick="createDoctor();return false">保存</button>
                 </div>
             </form>
         </div>
@@ -285,27 +285,18 @@
 <script src="//cdn.gaic.com/cdn/ui-bootstrap/0.58.0/js/lib/ckeditor/ckeditor.js"></script>
 
 <script>
-    CKEDITOR.editorConfig = function (config) {
-       config.extraPlugins = 'confighelper';
-    };
-    CKEDITOR.replace('profile');
 
-    var skill;
+    var skill = new Array();
     var first   = document.querySelector('#firstid');
     var second  = document.querySelector('#secondid');
     var third   = document.querySelector('#thirdid');
     var firstoptions = first.querySelectorAll('option');
     var secondoptions = second.querySelectorAll('option');
     var thirdoptions = third.querySelectorAll('option');
-    $(document).ready(function () {
-        skill = new Array();
-    });
-
     CKEDITOR.editorConfig = function (config) {
        config.extraPlugins = 'confighelper';
     };
     CKEDITOR.replace('profile');
-
     function createDoctor() {
 
         if (document.getElementById('name').value == "") {
@@ -333,7 +324,7 @@
             return false;
         }
 
-        if (document.getElementById('nation').value == "") {
+        if (document.getElementById('nationid').value == "") {
             window.alert("Select Doctor Nation");
             return false;
         }

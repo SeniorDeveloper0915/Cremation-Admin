@@ -33,7 +33,6 @@
     $getSkills->execute(array($doctorId));
     $rowSkills = $getSkills->fetchAll();
 
-
     $doctorData = $db->prepare('SELECT * FROM doctor WHERE id = ?');
     $doctorData->execute(array($doctorId));
     $rowDoctor = $doctorData->fetch(PDO::FETCH_ASSOC);
@@ -235,7 +234,7 @@
                                 </select>
                             </div>
                             <div class="col-sm-2">
-                                <select class="form-control" id="thirdid" name="thirdid" onchange="selThird(this.value);">
+                                <select class="form-control" id="thirdid" name="thirdid">
                                     <?php
                                         foreach ($thirdProjects as $value) {
                                     ?>
@@ -328,10 +327,10 @@
     CKEDITOR.replace('profile');
 
 
-    $(document).ready(function () {
+//    $(document).ready(function () {
         skill = new Array();
         var rowSkills = <?php echo json_encode($rowSkills); ?>;
-
+	console.log(rowSkills);
         for (var i = 0; i < rowSkills.length; i ++) {
             skill[i] = new Array();
             skill[i][0] = rowSkills[i][2]
@@ -339,20 +338,11 @@
             skill[i][2] = rowSkills[i][4]
         }
         displaySkill();
-    });
+  //  });
 
     function editDoctor() {
-        if (document.getElementById('name').value != "" && 
-            document.getElementById('titleid').value != "" && 
-            document.getElementById('doctorimg').value != "" && 
-            document.getElementById('length').value != "" && 
-            document.getElementById('number').value != "" && 
-            document.getElementById('nationid').value != "" && 
-            document.getElementById('sort').value != "" && 
-            CKEDITOR.instances.profile.getData != "" && 
-            skill.length != 0 &&
-            document.getElementById('sort').value <= 100) {
             // Send ajax Request to ajax/add_user.php  to create a user
+	console.log(JSON.stringify(skill));
             $.easyAjax({
                 url: "../../ajax/doctor/edit_doctor.php",
                 type: "POST",
@@ -368,9 +358,6 @@
                     }
                 }
             });
-        } else {
-            alert("Input Correctly!");
-        }
     }
 
     function back() {

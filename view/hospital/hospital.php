@@ -162,7 +162,7 @@
 
     function editHospital(id) {
         deleteCookie();
-        document.cookie = "hospital_id" + id;
+        document.cookie = "hospital_id = " + id;
         window.location.href = "edit_hospital.php";
     }
 

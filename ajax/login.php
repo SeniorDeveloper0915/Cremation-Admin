@@ -32,7 +32,7 @@ if($statement->rowCount() > 0) {
 
     // Last login update
 
-    $output = responseRedirect('http://localhost/cremation/view/dashboard/dashboard.php', 'Logged in Successfully');
+    $output = responseRedirect('view/dashboard/dashboard.php', 'Logged in Successfully');
 
 }else
 {
