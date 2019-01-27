@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    include 'config/config.php';
+    include 'config/index.php';
 
 // if Logged in redirect to dashboard
     if(isset($_SESSION['admin'])){
-        header('location:view/dashboard/dashboard.php');
+        header('location:view/dashboard/table/index.php');
         exit();
 }
 

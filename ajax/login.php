@@ -1,7 +1,7 @@
 <?php
 session_start();
-	include '../config/config.php';
-	include '../include/reply.php';
+	include '../config/index.php';
+	include '../include/reply/index.php';
 
 	$username	=	post('username');
 	$password	=	post('password');
@@ -32,7 +32,7 @@ if($statement->rowCount() > 0) {
 
     // Last login update
 
-    $output = responseRedirect('view/dashboard/dashboard.php', 'Logged in Successfully');
+    $output = responseRedirect('view/dashboard/table/index.php', 'Logged in Successfully');
 
 }else
 {

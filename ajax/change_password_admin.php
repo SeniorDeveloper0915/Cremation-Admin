@@ -3,7 +3,7 @@ session_start();
   include '../config/config.php';
 
 // ADMIN SESSION CHECK SET OR NOT
-if(!isset($_SESSION['username']))
+if(!isset($_SESSION['admin']))
 {
     $output = responseError('Session is destroyed');
     die(json_encode($output));
