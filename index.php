@@ -21,7 +21,7 @@
 <html class="no-js"> <!--<![endif]-->
 <head>
 
-    <title>Admin Panel | Login</title>
+    <title>韩医主刀管理</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -52,7 +52,7 @@
 <div class="logo">
     <a href="javascript:;">
 <!--        <img src="../assets/img/logos/logo-big.png" alt="" /> -->
-        Admin Panel
+        韩医主刀管理
     </a>
 </div>
 <!-- END LOGO -->
@@ -61,7 +61,7 @@
     <!-- BEGIN LOGIN FORM -->
 
 <form class="login-form" autocomplete="off" method="POST">
-    <h3 class="form-title font-green">Sign In</h3>
+    <h3 class="form-title font-green">登录</h3>
     <div id="error"></div>
     <div class="form-group form-md-line-input">
         <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->

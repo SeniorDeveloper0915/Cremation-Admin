@@ -16,22 +16,9 @@
                 <?php } ?>
             ">
                 <span class="logo-default">
-                    <?php if($_SESSION['name'] && isset($_SESSION['table']) && $_SESSION['table']== 'admin') {?>
-
-                        Admin
-
-                    <?php } else { ?>
-
-                        User
-
-                    <?php } ?>
-                    Panel
+                    <img src="../../assets/logo.png" style="width: 100px; height: 50px; margin-top: -10px;">
                 </span>
-
             </a>
-            <div class="menu-toggler sidebar-toggler">
-                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
-            </div>
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
