@@ -70,7 +70,7 @@ if ($_POST) {
         $imageName = generateNewFileName($_FILES['beforeimg']);
 
         $ext               = end((explode('.', $_FILES['beforeimg']['name'])));
-        $path              = "../../images/project/" . $imageName;
+        $path              = "../../../images/project/" . $imageName;
         $tmp               = $_FILES['beforeimg']['tmp_name'];
 
         // Check if uploaded image of the format specified
@@ -109,7 +109,7 @@ if ($_POST) {
         $imageName = generateNewFileName($_FILES['effectimg']);
 
         $ext               = end((explode('.', $_FILES['effectimg']['name'])));
-        $path              = "../../images/project/" . $imageName;
+        $path              = "../../../images/project/" . $imageName;
         $tmp               = $_FILES['effectimg']['tmp_name'];
 
         // Check if uploaded image of the format specified
@@ -152,8 +152,8 @@ if ($_POST) {
         $ext1              = end((explode('.', $_FILES['beforeimg']['name'])));
         $ext2              = end((explode('.', $_FILES['effectimg']['name'])));
 
-        $path1             = "../../images/project/" . $beforeName;
-        $path2             = "../../images/project/" . $effectName;
+        $path1             = "../../../images/project/" . $beforeName;
+        $path2             = "../../../images/project/" . $effectName;
 
         $tmp1              = $_FILES['beforeimg']['tmp_name'];
         $tmp2              = $_FILES['effectimg']['tmp_name'];
