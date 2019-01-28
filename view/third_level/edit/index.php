@@ -74,18 +74,18 @@
                                             <label for="projectname">一级项目名称 : </label>        
                                         </div>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="firstid" name="firstid">
+                                            <select class="form-control" id="firstid" name="firstid" onchange="selFirst(this.value);">
                                                 <?php
                                                     foreach ($firstProjects as $value) {
                                                         if ($value['id'] == $rowProject['First_Project_Id'])
                                                         {
                                                 ?>
-                                                            <option value="<?php echo $value['id'];?>" selected><?php echo $value['Project_Name'];?></option>
+                                                            <option value="<?php echo $value['id'];?>" data-option="<?php echo $value['id'];?>" selected><?php echo $value['Project_Name'];?></option>
                                                 <?php
                                                         } else if ($value['id'] != $rowProject['First_Project_Id'])
                                                         {
                                                 ?>
-                                                            <option value="<?php echo $value['id'];?>"><?php echo $value['Project_Name'];?></option>
+                                                            <option value="<?php echo $value['id'];?>" data-option="<?php echo $value['id'];?>"><?php echo $value['Project_Name'];?></option>
                                                 <?php
                                                         }
                                                     }
@@ -107,12 +107,12 @@
                                                         if ($value['id'] == $rowProject['Second_Project_Id'])
                                                         {
                                                 ?>
-                                                            <option value="<?php echo $value['id'];?>" selected><?php echo $value['Project_Name'];?></option>
+                                                            <option value="<?php echo $value['id'];?>" data-option="<?php echo $value['First_Project_Id'];?>" data-id="<?php echo $value['id'];?>" selected><?php echo $value['Project_Name'];?></option>
                                                 <?php
                                                         } else if ($value['id'] != $rowProject['Second_Project_Id'])
                                                         {
                                                 ?>
-                                                            <option value="<?php echo $value['id'];?>"><?php echo $value['Project_Name'];?></option>
+                                                            <option value="<?php echo $value['id'];?>" data-option="<?php echo $value['First_Project_Id'];?>" data-id="<?php echo $value['id'];?>"><?php echo $value['Project_Name'];?></option>
                                                 <?php
                                                         }
                                                     }
@@ -243,14 +243,14 @@
                                             <label for="proposedprice">参考价格 : </label>        
                                         </div>
                                         <div class="col-sm-4">
-                                            <input type="text" id="proposedfrom" name="proposedfrom" class="form-control input-sm" data-required="true"
+                                            <input type="number" id="proposedfrom" name="proposedfrom" class="form-control input-sm" data-required="true"
                                                 value="<?php echo $rowProject['Proposed_From'] ?>" step="any">        
                                         </div>
 					                    <div class="col-sm-1" style="text-align : center">
 						                    <span> ~ </span>
 					                    </div>
 					                    <div class="col-sm-4">
-                                            <input type="text" id="proposedto" name="proposedto" class="form-control input-sm" data-required="true"
+                                            <input type="number" id="proposedto" name="proposedto" class="form-control input-sm" data-required="true"
                                                 value="<?php echo $rowProject['Proposed_To'] ?>" step="any">
                                         </div>
                                     </div>
@@ -394,6 +394,11 @@
 <script src="../../../assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js" type="text/javascript"></script>
 <script src="../../../assets/plugins/froiden-helper/helper.js" type="text/javascript"></script>
 <script>
+    var first   = document.querySelector('#firstid');
+    var second  = document.querySelector('#secondid');
+    var firstoptions = first.querySelectorAll('option');
+    var secondoptions = second.querySelectorAll('option');
+    
     function back() {
         window.location.href = "../table/index.php";
     }
@@ -410,6 +415,21 @@
             }
         });
     }
+
+    function selFirst(value) {
+        // body...
+        var secondCnt = 0, thirdCnt = 0;    
+        second.innerHTML = '';
+        for(var i = 0; i < secondoptions.length; i++) {
+            if(secondoptions[i].dataset.option == value) {
+                second.appendChild(secondoptions[i]);
+                secondCnt ++;
+            }
+        }
+
+    }
+
+    // selFirst(firstid.value);
 </script>
 </body>
 </html>

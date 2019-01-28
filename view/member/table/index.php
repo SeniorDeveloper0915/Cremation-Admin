@@ -21,7 +21,7 @@
 <html class="no-js"> <!--<![endif]-->
 <head>
 
-    <title>攻略管理 </title>
+    <title>核心团队管理 </title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -45,7 +45,7 @@
                 <div class="portlet-title">
                     <div class="caption font-green">
                         <i class="icon-user font-green"></i>
-                        <span class="caption-subject bold uppercase">攻略管理 </span>
+                        <span class="caption-subject bold uppercase">核心团队管理 </span>
                     </div>
                     <div class="actions">
                         <div class="btn-group btn-group-devided">

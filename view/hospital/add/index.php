@@ -165,7 +165,7 @@
                                 <label for="level">医院等级 : </label>        
                             </div>
                             <div class="col-sm-9">
-                                <input type="number" id="level" name="level" class="form-control input-sm" data-required="true"
+                                <input type="string" id="level" name="level" class="form-control input-sm" data-required="true"
                                     value="" placeholder="请输入医院等级">        
                             </div>
                         </div>

@@ -104,9 +104,9 @@
 <li class="nav-item <?php if((strpos($url, 'qa/table/index.php') != false)) echo 'active';?> ">
     <a href="../../qa/table/index.php" class="nav-link ">
         <i class="icon-envelope"></i>
-        <span class="title">问答管理</span>
+        <span class="title" style="font-size: 16px;">问答管理</span>
     </a>
-</li>
+</li>    
 
 <li class="dropdown-btn inactive">
     <a class="nav-link ">
